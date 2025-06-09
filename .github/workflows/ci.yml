@@ -9,5 +9,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.11
-      - run: pip install pytest
+      - run: pip install -e .        # installs loan_stress & its deps
+
+      - run: pip install pytest      # (keep existing line)
       - run: pytest -q
