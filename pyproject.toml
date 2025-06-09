@@ -7,8 +7,13 @@ name = "loan-stress-test"
 version = "0.0.1"
 description = "CET1 stress-engine for SME + card portfolios"
 requires-python = ">=3.11"
-authors = [{name = "Nivedita Sureshkumar", email = "nivedita.sureshk@gmail.com"}]
+authors = [{name = "Your Name", email = "you@example.com"}]
 readme = "README.md"
 license = {text = "MIT"}
 classifiers = ["Programming Language :: Python :: 3"]
-packages = ["loan_stress"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
