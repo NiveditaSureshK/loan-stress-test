@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loan-stress-test"
+version = "0.0.1"
+description = "CET1 stress-engine for SME + card portfolios"
+requires-python = ">=3.11"
+authors = [{name = "Nivedita Sureshkumar", email = "nivedita.sureshk@gmail.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = ["Programming Language :: Python :: 3"]
+packages = ["loan_stress"]
