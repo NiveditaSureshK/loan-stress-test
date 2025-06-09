@@ -1,7 +1,7 @@
 # Unsecured & Small-Business Loan Stress Test
 
 ## Goal
-Simulate **1 000 macro-economic scenarios**, forecast credit losses on SME loans *and* credit-card receivables, and estimate **worst-case CET1 erosion** over 12 quarters.
+Simulate **1000 macro-economic scenarios**, forecast credit losses on SME loans *and* credit-card receivables, and estimate **worst-case CET1 erosion** over 12 quarters.
 
 ## Why It Matters
 Annual **CCAR/DFAST** filings require banks to prove capital resilience. Automating this analysis shortens prep cycles and surfaces capital pressure points in near real time.
