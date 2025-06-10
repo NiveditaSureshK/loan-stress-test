@@ -1,4 +1,5 @@
 name: CI
+
 on: [push, pull_request]
 
 jobs:
@@ -7,11 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Spin up Miniconda & create the “stress” env from your YAML
+      # Set up Miniconda and create the environment
       - uses: conda-incubator/setup-miniconda@v3
         with:
           environment-file: environment.yml
           activate-environment: stress
+          auto-activate-base: false
 
-      # Run the project’s unit-tests
+      # Explicitly install pytest inside the Conda env (even if it's in the YAML)
+      - run: conda install pytest -y
+
+      # Run unit tests
       - run: pytest -q
