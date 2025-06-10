@@ -6,10 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-      - run: pip install -e .        # installs loan_stress & its deps
 
-      - run: pip install pytest      # (keep existing line)
+      # Spin up Miniconda & create the “stress” env from your YAML
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environment.yml
+          activate-environment: stress
+
+      # Run the project’s unit-tests
       - run: pytest -q
