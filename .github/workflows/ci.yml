@@ -8,15 +8,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Set up Miniconda and create the environment
+      # Setup Conda environment
       - uses: conda-incubator/setup-miniconda@v3
         with:
           environment-file: environment.yml
           activate-environment: stress
           auto-activate-base: false
 
-      # Explicitly install pytest inside the Conda env (even if it's in the YAML)
-      - run: conda install pytest -y
+      # Ensure pytest is installed and package is registered
+      - name: Install package and pytest
+        run: |
+          conda activate stress
+          python -m pip install -e .
+          python -m pip install pytest
 
       # Run unit tests
-      - run: pytest -q
+      - name: Run unit tests
+        run: |
+          conda activate stress
+          pytest -q
