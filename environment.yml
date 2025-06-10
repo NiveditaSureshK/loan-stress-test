@@ -1,0 +1,27 @@
+channels:
+  - conda-forge
+  - defaults
+
+name: stress
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - numpy
+  - statsmodels
+  - linearmodels
+  - lightgbm
+  - optuna
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - pytest
+  - black
+  - isort
+  - pre-commit
+  - pip:
+      - papermill
+      - nbconvert
+
+
+
